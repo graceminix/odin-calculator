@@ -33,3 +33,8 @@ function operate(operator, a, b) {
         return divideNumbers(a, b);
     }
 }
+
+let equal = addEventListener("click", )
+
+
+

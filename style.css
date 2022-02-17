@@ -1,0 +1,45 @@
+@font-face{
+    font-family: "calculator-font";
+    src: url("/home/grace/Downloads/digital-7/digital-7.ttf") format("truetype");
+}
+
+body {
+    text-align: center;
+    font-family: 'calculator-font';
+    background-color: #0edaff;
+}
+
+#buttons {
+    display: grid;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    width: 500px;
+    height: 625px;
+    margin: auto;
+}
+
+.screen {
+    width: 496px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'calculator-font';
+    font-size: 60px;
+    background-color: black;
+    color: #be17fd;
+}
+
+button {
+    font-family: inherit;
+    font-size: 40px;
+    background-color: black;
+    color: #0edaff;
+    border: 2px solid #0edaff;
+}
+
+#enter {
+    grid-column: span 3;
+    color: #be17fd
+}
+
