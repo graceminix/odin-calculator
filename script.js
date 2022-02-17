@@ -1,3 +1,6 @@
+var one = 0;
+var two = 0;
+
 function addNumbers(a, b) {
     a = Number(a);
     b = Number(b);
@@ -34,7 +37,19 @@ function operate(operator, a, b) {
     }
 }
 
-let equal = addEventListener("click", )
+//Below is how to add a number to the screen!  Delete this once it's done!
+
+// let answer = document.querySelector('.screen');
+// let initial = document.createTextNode(0);
+// answer.appendChild(initial);
+
+
+let equal = document.querySelector('.one')
+equal.addEventListener("click", logVariable);
+
+function logVariable() {
+    console.log(1)
+}
 
 
 
