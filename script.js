@@ -3,29 +3,38 @@ var deux = 0;
 var operator = 0;
 var result = 0;
 var counter = 0;
+var decimal1 = 0;
+var decimal2 = 0;
 
 function addNumbers(a, b) {
     a = Number(a);
     b = Number(b);
-    return (a + b);
+    answer = (a + b);
+    return Math.round(answer * 100) / 100;
 }
 
 function subtractNumbers(a, b) {
     a = Number(a);
     b = Number(b);
-    return (a - b);
+    answer = (a - b);
+    return Math.round(answer * 100) / 100;
 }
 
 function multiplyNumbers(a, b) {
     a = Number(a);
     b = Number(b);
-    return (a * b);
+    answer = (a * b);
+    return Math.round(answer * 100) / 100;
 }
 
 function divideNumbers(a, b) {
     a = Number(a);
     b = Number(b);
-    return (a / b);
+    if (b == 0) {
+        return ('Absolutely not!');
+    }
+    answer = (a / b);
+    return Math.round(answer * 100) / 100;
 }
 
 function operate(operator, a, b) {
@@ -59,8 +68,8 @@ function totalAnswer() {
         deux = 0;
         operator = 0;
         counter = 0;
-    } else {
-        console.log('womp')
+        decimal1 = 0;
+        decimal2 = 0;
     }
 }
 
@@ -70,13 +79,21 @@ uno.addEventListener("click", logVariable1);
 
 function logVariable1() {
     if (operator == 0) {
-        une += '1';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 1;
+        } else {
+            une += '1';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '1';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 1;
+        } else {
+            deux += '1';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -85,13 +102,21 @@ dos.addEventListener("click", logVariable2);
 
 function logVariable2() {
     if (operator == 0) {
-        une += '2';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 2;
+        } else {
+            une += '2'
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '2';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 2;
+        } else {
+            deux += '2';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -100,13 +125,21 @@ tres.addEventListener("click", logVariable3);
 
 function logVariable3() {
     if (operator == 0) {
-        une += '3';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 3;
+        } else {
+            une += '3';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '3';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 3;
+        } else {
+            deux += '3';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -115,13 +148,21 @@ quatro.addEventListener("click", logVariable4);
 
 function logVariable4() {
     if (operator == 0) {
-        une += '4';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 4;
+        } else {
+            une += '4';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '4';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 4;
+        } else {
+            deux += '4';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -130,13 +171,21 @@ cinqo.addEventListener("click", logVariable5);
 
 function logVariable5() {
     if (operator == 0) {
-        une += '5';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 5;
+        } else {
+            une += '5';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '5';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 5;
+        } else {
+            deux += '5';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -145,13 +194,21 @@ seis.addEventListener("click", logVariable6);
 
 function logVariable6() {
     if (operator == 0) {
-        une += '6';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 6;
+        } else {
+            une += '6';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '6';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 6;
+        } else {
+            deux += '6';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -160,13 +217,21 @@ siete.addEventListener("click", logVariable7);
 
 function logVariable7() {
     if (operator == 0) {
-        une += '7';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 7;
+        } else {
+            une += '7';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '7';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 7;
+        } else {
+            deux += '7';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -175,13 +240,21 @@ ocho.addEventListener("click", logVariable8);
 
 function logVariable8() {
     if (operator == 0) {
-        une += '8';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 8;
+        } else {
+            une += '8';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '8';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 8;
+        } else {
+            deux += '8';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -190,13 +263,21 @@ nuevo.addEventListener("click", logVariable9);
 
 function logVariable9() {
     if (operator == 0) {
-        une += '9';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 9;
+        } else {
+            une += '9';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '9';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 9;
+        } else {
+            deux += '9';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -205,13 +286,21 @@ zera.addEventListener("click", logVariable0);
 
 function logVariable0() {
     if (operator == 0) {
-        une += '0';
-        parseInt(une);
-        console.log('une: ' + une);
+        if (une == '0') {
+            une = 0;
+        } else {
+            une += '0';
+            parseInt(une);
+        }
+        displayNumber1();
     } else {
-        deux += '0';
-        parseInt(deux);
-        console.log('deux: ' + deux);
+        if (deux == '0') {
+            deux = 0;
+        } else {
+            deux += '0';
+            parseInt(deux);
+        }
+        displayNumber2();
     }
 }
 
@@ -219,14 +308,20 @@ let dit = document.querySelector('.decimal')
 dit.addEventListener("click", logVariabledot);
 
 function logVariabledot() {
+
     if (operator == 0) {
+        if (decimal1 != 0) {
+            document.getElementsByClassName('.decimal').disabled = true;
+        }
         une += '.';
         parseInt(une);
-        console.log('une: ' + une);
+        displayNumber1();
+        decimal += 1;
     } else {
         deux += '.';
         parseInt(deux);
-        console.log('deux: ' + deux);
+        displayNumber2();
+        decimal += 1;
     }
 }
 
@@ -239,15 +334,15 @@ function logVariableneg() {
             une = '-';
         } else  {
             une *= -1;
-            console.log('une: ' + une);
         }
+        displayNumber1();
     } else {
         if (deux == 0) {
             deux = '-';
         } else {
             deux *= -1;
-            console.log('deux: ' + deux)
         }
+        displayNumber2();
     }
 }
 
@@ -334,4 +429,18 @@ function removeAllText(element) {
 
         }
     }
+}
+
+function displayNumber1() {
+    let answer = document.querySelector('.screen');
+    removeAllText(answer);
+    let initial = document.createTextNode(une);
+    answer.appendChild(initial);
+}
+
+function displayNumber2() {
+    let answer = document.querySelector('.screen');
+    removeAllText(answer);
+    let initial = document.createTextNode(deux);
+    answer.appendChild(initial);
 }
