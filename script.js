@@ -1,5 +1,7 @@
-var one = 0;
-var two = 0;
+var une = 0;
+var deux = 0;
+var operator = 0;
+var result = 0;
 
 function addNumbers(a, b) {
     a = Number(a);
@@ -26,30 +28,51 @@ function divideNumbers(a, b) {
 }
 
 function operate(operator, a, b) {
-    if (operator == 'add') {
+    if (operator == 1) {
         return addNumbers(a, b);
-    } else if (operator == 'subtract') {
+    } else if (operator == 2) {
         return subtractNumbers(a, b);
-    } else if (operator == 'multiply') {
+    } else if (operator == 3) {
         return multiplyNumbers(a, b);
-    } else {
+    } else if (operator == 4) {
         return divideNumbers(a, b);
+    } else {
+        return ('ERROR');
     }
 }
 
-//Below is how to add a number to the screen!  Delete this once it's done!
+let answer = document.querySelector('.screen');
+let initial = document.createTextNode(0);
+answer.appendChild(initial);
 
-// let answer = document.querySelector('.screen');
-// let initial = document.createTextNode(0);
-// answer.appendChild(initial);
+let equals = document.querySelector('.enter');
+equals.addEventListener("click", totalAnswer);
+
+function totalAnswer() {
+    if (operator != 0) {
+        let final = operate(operator, une, deux);
+        let answer = document.querySelector('.screen');
+        let result = document.createTextNode(final);
+        answer.textContent = final;
+    } else {
+        console.log('womp')
+    }
+}
 
 
 let equal = document.querySelector('.one')
-equal.addEventListener("click", logVariable);
+equal.addEventListener("click", logVariable1);
 
-function logVariable() {
-    console.log(1)
+function logVariable1() {
+    if (operator == 0) {
+        une += '1';
+        parseInt(une);
+        console.log(une);
+    } else {
+        deux += '1';
+        parseInt(deux);
+        console.log('deux: ' + deux);
+    }
 }
-
 
 
