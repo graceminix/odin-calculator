@@ -28,6 +28,9 @@ body {
     font-size: 60px;
     background-color: black;
     color: #be17fd;
+    overflow: hidden;
+    font-size: 5.2vmin;
+
 }
 
 button {

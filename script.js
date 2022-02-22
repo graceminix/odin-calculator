@@ -55,6 +55,7 @@ let equals = document.querySelector('.enter');
 equals.addEventListener("click", totalAnswer);
 
 function totalAnswer() {
+    console.log(une + deux + operator);
     if (operator != 0) {
         let final = operate(operator, une, deux);
         displayNumber(final);
