@@ -1,7 +1,7 @@
-var une = 0;
-var deux = 0;
+var une = '';
+var deux = '';
 var operator = 0;
-var result = 0;
+var final = '';
 var counter = 0;
 
 function addNumbers(a, b) {
@@ -36,22 +36,20 @@ function divideNumbers(a, b) {
 }
 
 function operate(operator, a, b) {
-    if (operator == 1) {
+    if (operator == '+') {
         return addNumbers(a, b);
-    } else if (operator == 2) {
+    } else if (operator == '-') {
         return subtractNumbers(a, b);
-    } else if (operator == 3) {
+    } else if (operator == 'x') {
         return multiplyNumbers(a, b);
-    } else if (operator == 4) {
+    } else if (operator == '/') {
         return divideNumbers(a, b);
     } else {
         return ('ERROR');
     }
 }
 
-let answer = document.querySelector('.screen');
-let initial = document.createTextNode(0);
-answer.appendChild(initial);
+displayNumber(0);
 
 let equals = document.querySelector('.enter');
 equals.addEventListener("click", totalAnswer);
@@ -59,15 +57,78 @@ equals.addEventListener("click", totalAnswer);
 function totalAnswer() {
     if (operator != 0) {
         let final = operate(operator, une, deux);
-        let answer = document.querySelector('.screen');
-        let result = document.createTextNode(final);
-        answer.textContent = final;
+        displayNumber(final);
         une = final;
-        deux = 0;
+        deux = '';
         operator = 0;
-        counter = 0;
     }
 }
+
+window.addEventListener("keydown", function(event) {
+    if (event.defaultPrevented) {
+        return;
+    }
+
+    switch(event.code) {
+        case "Digit1":
+            logVariable1();
+            break;
+        case "Digit2":
+            logVariable2();
+            break;
+        case "Digit3":
+            logVariable3();
+            break;
+        case "Digit4":
+            logVariable4();
+            break;
+        case "Digit5":
+            logVariable5();
+            break;
+        case "Digit6":
+            logVariable6();
+            break;
+        case "Digit7":
+            logVariable7();
+            break;
+        case "Digit8":
+            logVariable8();
+            break;
+        case "Digit9":
+            logVariable9();
+            break;
+        case "Digit0":
+            logVariable0();
+            break;
+        case "Enter":
+            totalAnswer();
+            break;
+        case "Period":
+            logVariabledot();
+            break;
+        case "Minus":
+            logVariableMinus();
+            break;
+        case "Slash":
+            logVariableDivide();
+            break;
+        case "Equal":
+            logVariablePlus()
+            break;
+        case "KeyX":
+            logVariableMultiply();
+            break;
+        case "KeyN":
+            logVariableneg();
+            break;
+        case "Backspace":
+            logVariableClear();
+
+    }
+})
+
+
+
 
 
 let uno = document.querySelector('.one')
@@ -81,7 +142,7 @@ function logVariable1() {
             une += '1';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 1;
@@ -89,7 +150,7 @@ function logVariable1() {
             deux += '1';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -104,7 +165,7 @@ function logVariable2() {
             une += '2'
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 2;
@@ -112,7 +173,7 @@ function logVariable2() {
             deux += '2';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -127,7 +188,7 @@ function logVariable3() {
             une += '3';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 3;
@@ -135,7 +196,7 @@ function logVariable3() {
             deux += '3';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -150,7 +211,7 @@ function logVariable4() {
             une += '4';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 4;
@@ -158,7 +219,7 @@ function logVariable4() {
             deux += '4';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + "" + deux);
     }
 }
 
@@ -173,7 +234,7 @@ function logVariable5() {
             une += '5';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 5;
@@ -181,7 +242,7 @@ function logVariable5() {
             deux += '5';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -196,7 +257,7 @@ function logVariable6() {
             une += '6';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 6;
@@ -204,7 +265,7 @@ function logVariable6() {
             deux += '6';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -219,7 +280,7 @@ function logVariable7() {
             une += '7';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 7;
@@ -227,7 +288,7 @@ function logVariable7() {
             deux += '7';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -242,7 +303,7 @@ function logVariable8() {
             une += '8';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 8;
@@ -250,7 +311,7 @@ function logVariable8() {
             deux += '8';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -265,7 +326,7 @@ function logVariable9() {
             une += '9';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 9;
@@ -273,7 +334,7 @@ function logVariable9() {
             deux += '9';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -288,7 +349,7 @@ function logVariable0() {
             une += '0';
             parseInt(une);
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == '0') {
             deux = 0;
@@ -296,7 +357,7 @@ function logVariable0() {
             deux += '0';
             parseInt(deux);
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -308,13 +369,13 @@ function logVariabledot() {
         if (checkDecimal(une) == false) {
             une += '.';
             parseInt(une);
-            displayNumber1();
+            displayNumber(une);
         }
     } else {
         if (checkDecimal(deux) == false) {
             deux += '.';
             parseInt(deux);
-            displayNumber2();
+            displayNumber(une + '' + operator + '' + deux);
         }
     }
 }
@@ -329,14 +390,14 @@ function logVariableneg() {
         } else  {
             une *= -1;
         }
-        displayNumber1();
+        displayNumber(une);
     } else {
         if (deux == 0) {
             deux = '-';
         } else {
             deux *= -1;
         }
-        displayNumber2();
+        displayNumber(une + '' + operator + '' + deux);
     }
 }
 
@@ -345,9 +406,14 @@ plus.addEventListener("click", logVariablePlus);
 
 function logVariablePlus() {
     if (counter == 0) {
-        operator = 1;
-        counter = 1;
+        operator = '+';
+        counter += 1;
+    } else {
+        totalAnswer();
+        operator = '+';
+        displayNumber(une);
     }
+    displayNumber(une + '' + operator);
 }
 
 let minus = document.querySelector('.minus')
@@ -355,9 +421,15 @@ minus.addEventListener("click", logVariableMinus);
 
 function logVariableMinus() {
     if (counter == 0) {
-        operator = 2;
-        counter = 1;
+        operator = '-';
+        counter += 1;
+    } else {
+        totalAnswer();
+        operator = '-';
+        displayNumber(une);
     }
+    displayNumber(une + '' + operator);
+
 }
 
 let multiply = document.querySelector('.multiply')
@@ -365,9 +437,14 @@ multiply.addEventListener("click", logVariableMultiply);
 
 function logVariableMultiply() {
     if (counter == 0) {
-        operator = 3;
-        counter = 1;
+        operator = 'x';
+        counter += 1;
+    } else {
+        totalAnswer();
+        operator = 'x';
+        displayNumber(une);
     }
+    displayNumber(une + '' + operator);
 }
 
 let divide = document.querySelector('.divide')
@@ -375,23 +452,25 @@ divide.addEventListener("click", logVariableDivide);
 
 function logVariableDivide() {
     if (counter == 0) {
-        operator = 4;
-        counter = 1;
+        operator = '/';
+        counter += 1;
+    } else {
+        totalAnswer();
+        operator = '/';
+        displayNumber(une);
     }
+    displayNumber(une + '' + operator);
 }
 
 let clear = document.querySelector('.clear')
 clear.addEventListener("click", logVariableClear);
 
 function logVariableClear() {
-    une = 0;
-    deux = 0;
+    une = '';
+    deux = '';
     operator = 0;
     counter = 0;
-    let answer = document.querySelector('.screen');
-    removeAllText(answer);
-    let initial = document.createTextNode(0);
-    answer.appendChild(initial);
+    displayNumber(0);
 }
 
 
@@ -425,18 +504,10 @@ function removeAllText(element) {
     }
 }
 //Function displays number une on screen
-function displayNumber1() {
+function displayNumber(display) {
     let answer = document.querySelector('.screen');
     removeAllText(answer);
-    let initial = document.createTextNode(une);
-    answer.appendChild(initial);
-}
-
-//Function displays number on screen
-function displayNumber2() {
-    let answer = document.querySelector('.screen');
-    removeAllText(answer);
-    let initial = document.createTextNode(deux);
+    let initial = document.createTextNode(display);
     answer.appendChild(initial);
 }
 
@@ -450,4 +521,3 @@ function checkDecimal(num) {
         return false;
     }
 }
-
