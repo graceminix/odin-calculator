@@ -3,8 +3,6 @@ var deux = 0;
 var operator = 0;
 var result = 0;
 var counter = 0;
-var decimal1 = 0;
-var decimal2 = 0;
 
 function addNumbers(a, b) {
     a = Number(a);
@@ -68,8 +66,6 @@ function totalAnswer() {
         deux = 0;
         operator = 0;
         counter = 0;
-        decimal1 = 0;
-        decimal2 = 0;
     }
 }
 
@@ -308,20 +304,18 @@ let dit = document.querySelector('.decimal')
 dit.addEventListener("click", logVariabledot);
 
 function logVariabledot() {
-
     if (operator == 0) {
-        if (decimal1 != 0) {
-            document.getElementsByClassName('.decimal').disabled = true;
+        if (checkDecimal(une) == false) {
+            une += '.';
+            parseInt(une);
+            displayNumber1();
         }
-        une += '.';
-        parseInt(une);
-        displayNumber1();
-        decimal += 1;
     } else {
-        deux += '.';
-        parseInt(deux);
-        displayNumber2();
-        decimal += 1;
+        if (checkDecimal(deux) == false) {
+            deux += '.';
+            parseInt(deux);
+            displayNumber2();
+        }
     }
 }
 
@@ -430,7 +424,7 @@ function removeAllText(element) {
         }
     }
 }
-
+//Function displays number une on screen
 function displayNumber1() {
     let answer = document.querySelector('.screen');
     removeAllText(answer);
@@ -438,9 +432,22 @@ function displayNumber1() {
     answer.appendChild(initial);
 }
 
+//Function displays number on screen
 function displayNumber2() {
     let answer = document.querySelector('.screen');
     removeAllText(answer);
     let initial = document.createTextNode(deux);
     answer.appendChild(initial);
 }
+
+//Function checks if there is a decimal in string.
+function checkDecimal(num) {
+    let string = num.toString();
+    let answer = string.includes('.');
+    if (answer == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
